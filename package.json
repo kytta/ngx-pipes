@@ -1,6 +1,6 @@
 {
   "name": "@kytta/ngx-pipes",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "author": "Dan Revah",
   "description": "Useful angular pipes",
   "license": "MIT",
@@ -80,6 +80,5 @@
     "webpack": "^5.75.0",
     "zone.js": "^0.11.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

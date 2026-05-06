@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.3](https://github.com/kytta/ngx-pipes/compare/v3.2.2...v3.2.3) (2026-05-06)
+
+
+### Bug Fixes
+
+* **deps:** move Webpack and PostCSS in devDependencies ([50495d8](https://github.com/kytta/ngx-pipes/commit/50495d89feeed831fd09c985c3dd118d08a3c46a))
+
 ### [3.2.2](https://github.com/danrevah/ngx-pipes/compare/v3.2.1...v3.2.2) (2023-05-07)
 
 ### [3.2.1](https://github.com/danrevah/ngx-pipes/compare/v3.2.0...v3.2.1) (2023-05-07)
