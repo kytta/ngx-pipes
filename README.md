@@ -2,13 +2,13 @@
 <img 
     src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
 <br/><br/>
-<a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square" alt="npm"></a>
+<a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/v/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
 <a href="http://packagequality.com/#?package=ngx-pipes"><img src="https://npm.packagequality.com/shield/ngx-pipes.svg?style=flat-square" alt="Package Quality"></a>
 <a href="https://travis-ci.org/danrevah/ngx-pipes"><img src="https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square" alt="Travis"></a>
-<a href="https://coveralls.io/github/danrevah/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
-<a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/dm/ngx-pipes.svg?style=flat-square" alt="npm"></a>
-<a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/dt/ngx-pipes?style=flat-square" alt="npm"></a>
-<a href="https://github.com/danrevah/ngx-pipes/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT licensed"></a>
+<a href="https://coveralls.io/github/kytta/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/kytta/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
+<a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/dm/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
+<a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/dt/%40kytta%2Fngx-pipes?style=flat-square" alt="npm"></a>
+<a href="https://github.com/kytta/ngx-pipes/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT licensed"></a>
 <br/><br/>
  Useful pipes for Angular with no external dependencies
 <br/><br/>
@@ -116,13 +116,13 @@
 1. Use npm to install the package
 
   ```terminal
-  $ npm install ngx-pipes --save 
+  $ npm install @kytta/ngx-pipes --save 
   ```
 
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule`, `NgDatePipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
-  import {NgPipesModule} from 'ngx-pipes';
+  import {NgPipesModule} from '@kytta/ngx-pipes';
   
   @NgModule({
    // ...
@@ -136,7 +136,7 @@
 3. Pipes are also injectable and can be used in Components / Services / etc..
 
   ```typescript  
-  import {ReversePipe} from 'ngx-pipes';
+  import {ReversePipe} from '@kytta/ngx-pipes';
 
   @Component({
     // ..
@@ -1260,7 +1260,7 @@ $ npm install -g angular-cli karma
 Clone the project, and install dependencies.
 
 ```bash
-$ git clone https://github.com/danrevah/ngx-pipes.git
+$ git clone git@github.com:kytta/ngx-pipes.git
 $ npm install
 ```
 

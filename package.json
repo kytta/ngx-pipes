@@ -1,5 +1,5 @@
 {
-  "name": "ngx-pipes",
+  "name": "@kytta/ngx-pipes",
   "version": "3.2.2",
   "author": "Dan Revah",
   "description": "Useful angular pipes",
@@ -30,7 +30,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/danrevah/ngx-pipes.git"
+    "url": "git+https://github.com/kytta/ngx-pipes.git"
   },
   "peerDependencies": {
     "@angular/core": ">=14"
