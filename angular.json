@@ -4,71 +4,16 @@
   "newProjectRoot": "projects",
   "projects": {
     "ngx-pipes": {
-      "projectType": "application",
-      "schematics": {},
+      "projectType": "library",
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "outputPath": "dist",
-            "index": "src/index.html",
-            "main": "src/ng-pipes/ng-pipes.module.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.json",
-            "aot": true,
-            "assets": [],
-            "styles": [],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "angular-test:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "angular-test:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "angular-test:build"
+            "project": "ng-package.json",
+            "tsConfig": "src/tsconfig.json"
           }
         },
         "test": {

@@ -1250,12 +1250,6 @@ this.num = 1;
 
 * Before adding any new feature or a fix make sure to open an issue first!
 
-Make sure you have `angular-cli` & `karma` installed globally.
-
-```bash
-$ npm install -g angular-cli karma
-```
-
 Clone the project, and install dependencies.
 
 ```bash
