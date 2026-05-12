@@ -5,8 +5,8 @@
   "description": "Useful angular pipes",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve",
-    "test": "ng test",
+    "start": "ng test",
+    "test": "ng test --no-watch",
     "build": "ng build",
     "lint": "ng lint",
     "release": "standard-version",
