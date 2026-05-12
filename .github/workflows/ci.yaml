@@ -21,9 +21,9 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v6
         with:
-          node-version: '12.6'
+          node-version: '16'
           cache: 'npm'
-      - run: npm install
+      - run: npm ci
 
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
 
