@@ -3,7 +3,6 @@
     src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
 <br/><br/>
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/v/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
-<a href="http://packagequality.com/#?package=ngx-pipes"><img src="https://npm.packagequality.com/shield/ngx-pipes.svg?style=flat-square" alt="Package Quality"></a>
 <a href="https://github.com/kytta/ngx-pipes/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/check-runs/kytta/ngx-pipes/master?style=flat-square" alt="GitHub Actions"></a>
 <a href="https://coveralls.io/github/kytta/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/kytta/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/dm/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
