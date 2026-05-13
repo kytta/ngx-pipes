@@ -4,7 +4,7 @@ import { FlattenPipe } from './flatten';
 import { IntersectionPipe } from './intersection';
 import { ReversePipe } from './reverse';
 import { TailPipe } from './tail';
-import { TrurthifyPipe } from './truthify';
+import { TruthifyPipe } from './truthify';
 import { UnionPipe } from './union';
 import { UniquePipe } from './unique';
 import { WithoutPipe } from './without';
@@ -31,7 +31,7 @@ const ARRAY_PIPES = [
   IntersectionPipe,
   ReversePipe,
   TailPipe,
-  TrurthifyPipe,
+  TruthifyPipe,
   UnionPipe,
   UniquePipe,
   WithoutPipe,
@@ -48,7 +48,7 @@ const ARRAY_PIPES = [
   OrderByImpurePipe,
   RangePipe,
   ChunkPipe,
-  FromPairsPipe
+  FromPairsPipe,
 ];
 
 @NgModule({
@@ -64,7 +64,7 @@ export { FlattenPipe } from './flatten';
 export { IntersectionPipe } from './intersection';
 export { ReversePipe } from './reverse';
 export { TailPipe } from './tail';
-export { TrurthifyPipe } from './truthify';
+export { TrurthifyPipe, TruthifyPipe } from './truthify';
 export { UnionPipe } from './union';
 export { UniquePipe } from './unique';
 export { WithoutPipe } from './without';
