@@ -13,6 +13,9 @@
 <br/><br/>
 </p>
 
+> [!NOTE]
+> This is a maintained fork of the awesome [ngx-pipes](https://github.com/danrevah/ngx-pipes) that aims to modernize the library and incorporate pending fixes.
+
 ## Table of contents
 
  - [Installation](#installation)
