@@ -48,7 +48,7 @@ const ARRAY_PIPES = [
   OrderByImpurePipe,
   RangePipe,
   ChunkPipe,
-  FromPairsPipe
+  FromPairsPipe,
 ];
 
 @NgModule({
