@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [3.2.5](https://github.com/kytta/ngx-pipes/compare/v3.2.4...v3.2.5) (2026-05-14)
+
+
+### Bug Fixes
+
+* rename TrurthifyPipe to TruthifyPipe ([#7](https://github.com/kytta/ngx-pipes/issues/7)) ([d46f58c](https://github.com/kytta/ngx-pipes/commit/d46f58c335c14081e207fc6fb9e33915f93ee4dd))
+* **stripTags:** fix possible ReDoS ([#10](https://github.com/kytta/ngx-pipes/issues/10)) ([bbdd923](https://github.com/kytta/ngx-pipes/commit/bbdd923fa8091d98d1f0eab4166a8ae2c46b369d))
+
 ## [3.2.4](https://github.com/kytta/ngx-pipes/compare/v3.2.3...v3.2.4) (2026-05-12)
 
 ## [3.2.3](https://github.com/kytta/ngx-pipes/compare/v3.2.2...v3.2.3) (2026-05-06)
