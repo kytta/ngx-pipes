@@ -9206,3 +9206,5 @@ packages:
     dependencies:
       tslib: 2.4.1
     dev: true
+
+publishDirectory: dist
