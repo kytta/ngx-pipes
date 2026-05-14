@@ -1257,7 +1257,7 @@ Clone the project, and install dependencies.
 
 ```bash
 $ git clone git@github.com:kytta/ngx-pipes.git
-$ npm install
+$ pnpm install
 ```
 
 Create a new branch
@@ -1268,7 +1268,7 @@ $ git checkout -b feat/someFeature
 
 Add tests & make sure everything is running properly
 ```bash
-$ npm test
+$ pnpm test
 ```
 
 Commit & push, and make a pull request!
