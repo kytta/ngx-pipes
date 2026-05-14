@@ -11,6 +11,7 @@ import { CeilPipe } from './ceil';
 import { DegreesPipe } from './degrees';
 import { BytesPipe } from './bytes';
 import { RadiansPipe } from './radians';
+import { AveragePipe } from './average';
 
 export const MATH_PIPES = [
   MaxPipe,
@@ -25,6 +26,7 @@ export const MATH_PIPES = [
   DegreesPipe,
   BytesPipe,
   RadiansPipe,
+  AveragePipe,
 ];
 
 @NgModule({
@@ -46,3 +48,4 @@ export { CeilPipe } from './ceil';
 export { DegreesPipe } from './degrees';
 export { BytesPipe } from './bytes';
 export { RadiansPipe } from './radians';
+export { AveragePipe } from './average';
