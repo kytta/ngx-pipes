@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [3.2.6](https://github.com/kytta/ngx-pipes/compare/v3.2.5...v3.2.6) (2026-05-14)
+
+
+### Bug Fixes
+
+* **average:** add missing pipe to module ([#12](https://github.com/kytta/ngx-pipes/issues/12)) ([f39e26e](https://github.com/kytta/ngx-pipes/commit/f39e26e300834e350a48a2549e48b4e538142841))
+
 ## [3.2.5](https://github.com/kytta/ngx-pipes/compare/v3.2.4...v3.2.5) (2026-05-14)
 
 
