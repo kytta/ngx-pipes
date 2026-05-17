@@ -20,10 +20,11 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [],
-            "styles": [],
-            "scripts": []
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "karmaConfig": "karma.conf.js"
           }
         },
         "lint": {
@@ -39,8 +40,8 @@
     }
   },
   "cli": {
+    "packageManager": "pnpm",
     "schematicCollections": [
-      "@angular-eslint/schematics",
       "@angular-eslint/schematics"
     ]
   }
