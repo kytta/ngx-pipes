@@ -51,6 +51,7 @@ const ARRAY_PIPES = [
   FromPairsPipe,
 ];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   imports: ARRAY_PIPES,
   exports: ARRAY_PIPES,

@@ -36,6 +36,7 @@ export const BOOLEAN_PIPES = [
   IsLessThanPipe,
 ];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   imports: BOOLEAN_PIPES,
   exports: BOOLEAN_PIPES,

@@ -3,6 +3,7 @@ import { TimeAgoPipe } from './time-ago';
 
 export const DATE_PIPES = [TimeAgoPipe];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   imports: DATE_PIPES,
   exports: DATE_PIPES,

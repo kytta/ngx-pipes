@@ -47,6 +47,7 @@ export const STRING_PIPES = [
   WrapPipe,
 ];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   imports: STRING_PIPES,
   exports: STRING_PIPES,

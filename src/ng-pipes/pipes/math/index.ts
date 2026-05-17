@@ -29,6 +29,7 @@ export const MATH_PIPES = [
   AveragePipe,
 ];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   imports: MATH_PIPES,
   exports: MATH_PIPES,
