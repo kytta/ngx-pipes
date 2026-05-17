@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [3.3.0](https://github.com/kytta/ngx-pipes/compare/v3.2.6...v3.3.0) (2026-05-17)
+
+
+### Features
+
+* **underscoreToSpace:** new pipe to replace underscores in strings with whitespace ([#11](https://github.com/kytta/ngx-pipes/issues/11)) ([6d6014c](https://github.com/kytta/ngx-pipes/commit/6d6014ccbfed6304dc5f600daa34987b8367ce05))
+
+
+### Performance Improvements
+
+* **filterBy:** parse nested properties once per prop ([#15](https://github.com/kytta/ngx-pipes/issues/15)) ([482932d](https://github.com/kytta/ngx-pipes/commit/482932d119b673647804250e42cc24f2a311fa27))
+
 ## [3.2.6](https://github.com/kytta/ngx-pipes/compare/v3.2.5...v3.2.6) (2026-05-14)
 
 
