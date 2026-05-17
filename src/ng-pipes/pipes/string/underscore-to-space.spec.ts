@@ -1,6 +1,6 @@
 import { UnderscoreToSpacePipe } from './underscore-to-space';
 
-describe('UnderscoreToSpacePipe Tests', () => {
+describe('UnderscoreToSpacePipe', () => {
   const pipe = new UnderscoreToSpacePipe();
 
   it('should replace underscores with spaces', () => {

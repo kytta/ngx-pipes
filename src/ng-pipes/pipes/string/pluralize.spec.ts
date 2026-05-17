@@ -1,27 +1,25 @@
 import { MakePluralStringPipe } from './pluralize';
 
-describe('MakePluralStringPipe Tests', () => {
+describe('MakePluralStringPipe', () => {
   let pipe: MakePluralStringPipe;
 
   beforeEach(() => {
     pipe = new MakePluralStringPipe();
   });
 
-  describe('Misc. Inputs', () => {
-    it('should return "" if passed null', () => {
-      expect(pipe.transform(null)).toEqual('' as string);
-    });
-
-    it('should return "" if passed undefined', () => {
-      expect(pipe.transform(undefined)).toEqual('' as string);
-    });
-
-    it('should return "" if passed ""', () => {
-      expect(pipe.transform('')).toEqual('' as string);
-    });
+  it('should return "" if passed null', () => {
+    expect(pipe.transform(null)).toEqual('' as string);
   });
 
-  describe('Naive Transformations of One Word', () => {
+  it('should return "" if passed undefined', () => {
+    expect(pipe.transform(undefined)).toEqual('' as string);
+  });
+
+  it('should return "" if passed ""', () => {
+    expect(pipe.transform('')).toEqual('' as string);
+  });
+
+  describe('for naive transformations of one word', () => {
     it('should return a plural when naively-transforming a singular entity', () => {
       expect(pipe.transform('Flippy-Floop')).toEqual('Flippy-Floops' as string);
     });
@@ -39,7 +37,7 @@ describe('MakePluralStringPipe Tests', () => {
     });
   });
 
-  describe('Naive Transformations of Two-Word Entities', () => {
+  describe('for naive transformations of two-word entities', () => {
     it('should return a plural when naively-transforming a two-word singular entity', () => {
       expect(pipe.transform('Flippy Floop')).toEqual('Flippy Floops' as string);
     });
@@ -56,7 +54,7 @@ describe('MakePluralStringPipe Tests', () => {
     });
   });
 
-  describe('Using English-language rules for words ending in "y"', () => {
+  describe('when using english-language rules for words ending in "y"', () => {
     it('should return "days" if passed "day"', () => {
       expect(pipe.transform('day')).toEqual('days' as string);
     });
@@ -98,7 +96,7 @@ describe('MakePluralStringPipe Tests', () => {
     });
   });
 
-  describe('Using Known Irregular Words', () => {
+  describe('when using known irregular words', () => {
     it('should return "Octopodes" if passed "Octopus"', () => {
       expect(pipe.transform('Octopus')).toEqual('Octopodes');
     });

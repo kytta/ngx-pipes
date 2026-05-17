@@ -1,13 +1,13 @@
 import { SlugifyPipe } from './slugify';
 
-describe('SlugifyPipe Tests', () => {
+describe('SlugifyPipe', () => {
   let pipe: SlugifyPipe;
 
   beforeEach(() => {
     pipe = new SlugifyPipe();
   });
 
-  it('Should slugify strings', () => {
+  it('should slugify strings', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform('')).toEqual('');
@@ -17,7 +17,7 @@ describe('SlugifyPipe Tests', () => {
     expect(pipe.transform('UPPER CASE TEXT')).toEqual('upper-case-text');
   });
 
-  it('Should slugify special strings', () => {
+  it('should slugify special strings', () => {
     expect(pipe.transform('http://example.com/foo')).toEqual('http-example-com-foo');
     expect(pipe.transform(' http://example.com/foo ')).toEqual('http-example-com-foo');
   });
