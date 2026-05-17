@@ -27,11 +27,11 @@ export class FilterByPipe implements PipeTransform {
 
     return input.filter(obj => {
       return props.some(prop => {
-        return terms.some(term => {
-          const value = extractDeepPropertyByMapKey(obj, prop);
-          /* tslint:disable */
-          const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
+        const value = extractDeepPropertyByMapKey(obj, prop);
+        /* tslint:disable */
+        const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
 
+        return terms.some(term => {
           if (isUndefined(value) && !isUndefined(props) && Array.isArray(props)) {
             return props.some(parent => {
               const str = String(parent[tail]).toLowerCase();
