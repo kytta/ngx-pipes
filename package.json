@@ -30,7 +30,13 @@
     "url": "git+https://github.com/kytta/ngx-pipes.git"
   },
   "peerDependencies": {
-    "@angular/core": ">=15"
+    "@angular/core": ">=15",
+    "moment": "^2"
+  },
+  "peerDependenciesMeta": {
+    "moment": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.11",
