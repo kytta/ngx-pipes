@@ -11,7 +11,7 @@ export class OmitPipe implements PipeTransform {
     return (
       Object.keys(obj)
         // tslint:disable-next-line:no-bitwise
-        .filter(k => !~args.indexOf(k))
+        .filter((k) => !~args.indexOf(k))
         .reduce((o, k) => {
           return Object.assign(o, { [k]: obj[k] });
         }, {})

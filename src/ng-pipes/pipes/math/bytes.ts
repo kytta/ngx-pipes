@@ -15,7 +15,7 @@ export class BytesPipe implements PipeTransform {
       return NaN;
     }
 
-    const format = this.dictionary.find(d => value < d.max) || this.dictionary[this.dictionary.length - 1];
+    const format = this.dictionary.find((d) => value < d.max) || this.dictionary[this.dictionary.length - 1];
     const calc = value / (format.max / 1024);
     const num = isUndefined(precision) ? calc : applyPrecision(calc, precision);
 

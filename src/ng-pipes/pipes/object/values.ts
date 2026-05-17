@@ -8,6 +8,6 @@ export class ValuesPipe implements PipeTransform {
       return obj;
     }
 
-    return Object.keys(obj).map(k => obj[k]);
+    return Object.keys(obj).map((k) => obj[k]);
   }
 }

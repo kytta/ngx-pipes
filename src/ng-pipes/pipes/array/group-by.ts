@@ -27,7 +27,7 @@ export class GroupByPipe implements PipeTransform {
     }
 
     if (Array.isArray(discriminator)) {
-      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
+      return discriminator.map((k) => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
     }
 
     return extractDeepPropertyByMapKey(payload, <string>discriminator);

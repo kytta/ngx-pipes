@@ -11,4 +11,4 @@ export class TruthifyPipe implements PipeTransform {
 }
 
 /** @deprecated this is a typo of {@link TruthifyPipe} and will be removed in v4 */
-export class TrurthifyPipe extends TruthifyPipe {};
+export class TrurthifyPipe extends TruthifyPipe {}

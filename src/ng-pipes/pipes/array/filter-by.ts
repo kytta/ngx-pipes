@@ -21,19 +21,17 @@ export class FilterByPipe implements PipeTransform {
       return input;
     }
 
-    const terms = String(search)
-      .toLowerCase()
-      .split(',');
+    const terms = String(search).toLowerCase().split(',');
 
-    return input.filter(obj => {
-      return props.some(prop => {
+    return input.filter((obj) => {
+      return props.some((prop) => {
         const value = extractDeepPropertyByMapKey(obj, prop);
         /* tslint:disable */
         const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
 
-        return terms.some(term => {
+        return terms.some((term) => {
           if (isUndefined(value) && !isUndefined(props) && Array.isArray(props)) {
-            return props.some(parent => {
+            return props.some((parent) => {
               const str = String(parent[tail]).toLowerCase();
 
               return strict ? str === term : !!~str.indexOf(term);

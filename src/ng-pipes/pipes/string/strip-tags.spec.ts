@@ -22,7 +22,7 @@ describe('StripTagsPipe', () => {
 
   it('should be fast on big strings', () => {
     // from https://github.com/danrevah/ngx-pipes/issues/255
-    const string =`• Damas Syrian (100 metres) < 1-minute walk
+    const string = `• Damas Syrian (100 metres) < 1-minute walk
 • Brazza cocktailbar (160 metres) < 2-minute walk
 • Spanish Inn - Live Music Pub (400 metres) < 5-minute walk
 • Bistro Mathilda (450 metres) < 5-minute walk`;

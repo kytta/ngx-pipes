@@ -5,10 +5,7 @@ import { isString } from '../helpers/helpers';
 export class ReversePipe implements PipeTransform {
   transform(input: any): any {
     if (isString(input)) {
-      return input
-        .split('')
-        .reverse()
-        .join('');
+      return input.split('').reverse().join('');
     }
 
     return Array.isArray(input) ? input.slice().reverse() : input;

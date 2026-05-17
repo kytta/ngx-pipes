@@ -9,7 +9,7 @@ export class PluckPipe implements PipeTransform {
 
   transform(input: any, map: string): any {
     if (Array.isArray(input)) {
-      return input.map(e => extractDeepPropertyByMapKey(e, map));
+      return input.map((e) => extractDeepPropertyByMapKey(e, map));
     }
 
     return isObject(input) ? extractDeepPropertyByMapKey(input, map) : input;
