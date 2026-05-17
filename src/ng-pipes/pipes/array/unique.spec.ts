@@ -1,6 +1,6 @@
 import { UniquePipe } from './unique';
 
-describe('DiffPipe', () => {
+describe('UniquePipe', () => {
   let pipe: UniquePipe;
 
   beforeEach(() => {

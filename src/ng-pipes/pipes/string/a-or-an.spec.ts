@@ -1,27 +1,29 @@
 import { AorAnPipe } from './a-or-an';
 
-describe('AorAnPipe Tests', () => {
+describe('AorAnPipe', () => {
   let pipe: AorAnPipe;
+
   beforeEach(() => {
     pipe = new AorAnPipe();
   });
-  describe('Misc. Inputs', () => {
-    it('should return "" if passed null', () => {
-      expect(pipe.transform(null)).toEqual('' as string);
-    });
-    it('should return "" if passed undefined', () => {
-      expect(pipe.transform(undefined)).toEqual('' as string);
-    });
-    it('should return "" if passed ""', () => {
-      expect(pipe.transform('')).toEqual('' as string);
-    });
+
+  it('should return "" if passed null', () => {
+    expect(pipe.transform(null)).toEqual('' as string);
   });
-  describe("Words Prefixed With 'A'", () => {
+  it('should return "" if passed undefined', () => {
+    expect(pipe.transform(undefined)).toEqual('' as string);
+  });
+  it('should return "" if passed ""', () => {
+    expect(pipe.transform('')).toEqual('' as string);
+  });
+
+  describe("for words prefixed with 'a'", () => {
     it('should return "a cat" when passed "cat"', () => {
       expect(pipe.transform('cat')).toEqual('a cat' as string);
     });
   });
-  describe("Words Prefixed With 'An'", () => {
+
+  describe("for words prefixed with 'an'", () => {
     it('should return "an egg" if passed "egg"', () => {
       expect(pipe.transform('egg')).toEqual('an egg' as string);
     });
@@ -29,7 +31,8 @@ describe('AorAnPipe Tests', () => {
       expect(pipe.transform('umbrella')).toEqual('an umbrella' as string);
     });
   });
-  describe('Multiple Words', () => {
+
+  describe('for multiple words', () => {
     it('should return "an aubergine from the store" if passed "aubergine from the store"', () => {
       expect(pipe.transform('aubergine from the store')).toEqual('an aubergine from the store' as string);
     });
@@ -42,7 +45,8 @@ describe('AorAnPipe Tests', () => {
       );
     });
   });
-  describe('Words from the Irregular Group', () => {
+
+  describe('for words from the irregular group', () => {
     it('should return "an herb" if passed "herb"', () => {
       expect(pipe.transform('herb')).toEqual('an herb' as string);
     });

@@ -1,6 +1,6 @@
 import { ShortenPipe } from './shorten';
 
-describe('ShortenPipe Tests', () => {
+describe('ShortenPipe', () => {
   let pipe: ShortenPipe;
 
   beforeEach(() => {

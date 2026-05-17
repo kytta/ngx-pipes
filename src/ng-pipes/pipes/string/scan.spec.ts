@@ -1,6 +1,6 @@
 import { ScanPipe } from './scan';
 
-describe('ScanPipe Tests', () => {
+describe('ScanPipe', () => {
   let pipe: ScanPipe;
 
   beforeEach(() => {
