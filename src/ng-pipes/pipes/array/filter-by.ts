@@ -9,7 +9,10 @@ import {
 } from '../helpers/helpers';
 
 // tslint:disable no-bitwise
-@Pipe({ name: 'filterBy' })
+@Pipe({
+  name: 'filterBy',
+  standalone: true,
+})
 export class FilterByPipe implements PipeTransform {
   transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
   transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
