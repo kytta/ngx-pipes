@@ -116,54 +116,46 @@
 
 ## Installation
 
-1. Use npm to install the package
+1. Use your preferred package manager to install the package
 
-  ```terminal
-  $ npm install @kytta/ngx-pipes --save 
+  ```sh
+  $ npm install @kytta/ngx-pipes
   ```
 
-2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule`, `NgDatePipesModule` or `NgBooleanPipesModule`.
+2. Import any pipes you need to use in your components:
 
-  ```typescript
-  import {NgPipesModule} from '@kytta/ngx-pipes';
-  
-  @NgModule({
-   // ...
-   imports: [
-     // ...
-     NgPipesModule
-   ]
-  })
-  ```
-
-3. Pipes are also injectable and can be used in Components / Services / etc..
-
-  ```typescript  
-  import {ReversePipe} from '@kytta/ngx-pipes';
+  ```ts
+  import { ReversePipe } from '@kytta/ngx-pipes';
 
   @Component({
-    // ..
-    providers: [ReversePipe]
+    imports: [ReversePipe],
+    // ...
   })
-  export class AppComponent {
-    constructor(private reversePipe: ReversePipe) {
-      this.reversePipe.transform('foo'); // Returns: "oof"
-    }
-    // ..
-  }
+  class AppComponent { /* ... */ }
   ```
 
-4. You can also use pipes as part of your template for ex. 
+3. You can now use the pipes in your template:
 
 ```html
 <p>{{ 'foo' | reverse }}</p> <!-- Output: "oof" -->
 ```
 
-and it's also possible to stack multiple pipes
+4. Alternatively, you can inject the pipes to use them in the component's TS code:
 
-```html
-<p>{{ ' foo' | ltrim | reverse }}</p> <!-- Output: "oof" -->
-```
+  ```ts
+  import { ReversePipe } from '@kytta/ngx-pipes';
+
+  @Component({
+    imports: [ReversePipe],
+    providers: [ReversePipe],
+    // ..
+  })
+  export class AppComponent {
+    private reversePipe = inject(ReversePipe);
+
+    s = this.reversePipe.transform('foo'); // Returns: "oof"
+  }
+  ```
 
 
 ## Date
