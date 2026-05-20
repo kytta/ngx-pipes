@@ -64,7 +64,7 @@ export { FlattenPipe } from './flatten';
 export { IntersectionPipe } from './intersection';
 export { ReversePipe } from './reverse';
 export { TailPipe } from './tail';
-export { TrurthifyPipe, TruthifyPipe } from './truthify';
+export { TruthifyPipe } from './truthify';
 export { UnionPipe } from './union';
 export { UniquePipe } from './unique';
 export { WithoutPipe } from './without';
