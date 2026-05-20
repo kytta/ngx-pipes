@@ -1,7 +1,9 @@
 <p align="center">
-<img 
-    src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
-<br/><br/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/ngx-logo-dark@2x.png">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/ngx-logo@2x.png">
+  <img width="360" height="120" alt="ngx-pipes" src="./assets/ngx-logo.svg">
+</picture>
 </p>
 <p align="center">
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/v/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
