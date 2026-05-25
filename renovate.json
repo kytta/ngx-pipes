@@ -1,6 +1,118 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ]
+    "https://codeberg.org/kytta/renovate-config/raw/branch/main/default.json",
+    ":maintainLockFilesMonthly",
+    "schedule:nonOfficeHours"
+  ],
+  "ignorePresets": [
+    "abandonments:recommended",
+    ":pinDevDependencies", 
+    ":maintainLockFilesWeekly",
+    "schedule:weekends"
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "dependencies",
+        "peerDependencies"
+      ],
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["/^karma$/", "/^karma-/"],
+      "groupName": "Karma"
+    },
+    {
+      "matchDatasources": [
+        "docker",
+        "node-version"
+      ],
+      "matchPackageNames": [
+        "/(?:^|/)node$/",
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!ghcr.io/devcontainers/features/node",
+        "!kindest/node"
+      ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "node",
+        "@types/node"
+      ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": [
+        "docker",
+        "npm"
+      ],
+      "matchPackageNames": [
+        "pnpm",
+        "ghcr.io/pnpm/pnpm"
+      ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:angular"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:angular-cli"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["ng-packagr", "zone.js"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:eslint"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:typescript-eslint"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:angular-eslint"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "extends": ["monorepo:jasmine"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@types/jasmine"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["/^karma(?:-|$)/", "/^karma-/"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false
+    }
+  ],
+  "postUpdateOptions": ["pnpmDedupe"]
 }
