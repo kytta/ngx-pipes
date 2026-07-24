@@ -1173,27 +1173,3 @@ this.num = 1;
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
-
-## Contributing
-
-* Before adding any new feature or a fix make sure to open an issue first!
-
-Clone the project, and install dependencies.
-
-```bash
-$ git clone git@github.com:kytta/ngx-pipes.git
-$ pnpm install
-```
-
-Create a new branch
-
-```bash
-$ git checkout -b feat/someFeature
-```
-
-Add tests & make sure everything is running properly
-```bash
-$ pnpm test
-```
-
-Commit & push, and make a pull request!
