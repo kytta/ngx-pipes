@@ -23,6 +23,7 @@
  - [Changelog](CHANGELOG.md)
  - [Date](#date)   
     - [timeAgo](#timeago)
+    - [timeTo](#timeto)
  - [String](#string)
     - [aOrAn](#aoran)
     - [repeat](#repeat)
@@ -162,7 +163,7 @@
 
 ### timeAgo
 
-Time ago pipe converts date to 'just now', 'X days ago', 'last week', 'X days ago', etc..
+Time ago pipe converts date to 'just now', 'X days ago', 'last week', etc..
 
 **Usage:** `string | timeAgo`
 ```typescript
@@ -177,6 +178,25 @@ const lastWeek = moment().subtract(10, 'days');
 ```html
 <span>Updated: {{now | timeAgo}}</span> <!-- Output: "just now" -->
 <span>Updated: {{lastWeek | timeAgo}}</span> <!-- Output: "last week" -->
+```
+
+### timeTo
+
+Time to pipe converts date to 'just now', 'in X days', 'next week', etc..
+
+**Usage:** `string | timeTo`
+```typescript
+import * as moment from 'moment';
+
+const now = new Date();
+
+// timeTo also supports moment.js objects
+const nextWeek = moment().add(10, 'days');
+```
+
+```html
+<span>Updated: {{now | timeTo}}</span> <!-- Output: "just now" -->
+<span>Updated: {{lastWeek | timeTo}}</span> <!-- Output: "next week" -->
 ```
 
 ## String
