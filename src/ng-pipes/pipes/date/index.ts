@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TimeAgoPipe } from './time-ago';
-import { TimeToPipe } from './time-to.pipe';
+import { TimeToPipe } from './time-to';
 
 export const DATE_PIPES = [TimeAgoPipe, TimeToPipe];
 
@@ -12,4 +12,4 @@ export const DATE_PIPES = [TimeAgoPipe, TimeToPipe];
 export class NgDatePipesModule {}
 
 export { TimeAgoPipe } from './time-ago';
-export { TimeToPipe } from './time-to.pipe';
+export { TimeToPipe } from './time-to';

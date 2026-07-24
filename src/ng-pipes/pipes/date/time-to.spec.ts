@@ -1,4 +1,4 @@
-import { TimeToPipe } from './time-to.pipe';
+import { TimeToPipe } from './time-to';
 
 describe('TimeToPipe', () => {
   let pipe: TimeToPipe;
