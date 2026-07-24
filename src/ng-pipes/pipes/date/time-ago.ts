@@ -17,11 +17,20 @@ export class TimeAgoPipe implements PipeTransform {
    * in order to keep `ngx-pipes` "pure" from dependencies!
    */
   public transform(inputDate: any): string {
-    if (!inputDate || (!inputDate.getTime && !inputDate.toDate && !Date.parse(inputDate))) {
+    if (!inputDate) {
       return 'Invalid date';
     }
 
-    const past = inputDate.toDate ? inputDate.toDate() : inputDate.getTime();
+    const past = inputDate.toDate
+      ? inputDate.toDate().getTime()
+      : inputDate.getTime
+      ? inputDate.getTime()
+      : Date.parse(inputDate);
+
+    if (isNaN(past)) {
+      return 'Invalid date';
+    }
+
     const now = +new Date();
 
     if (past > now) {
