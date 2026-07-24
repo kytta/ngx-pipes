@@ -13,25 +13,25 @@ describe('TimeToPipe', () => {
   const aMinuteAgoDate = new Date(today.getTime() + 60 * 1000);
 
   const fewMinutesToString = 'in 5 minutes';
-  const fewMinutesToDate = new Date(new Date().getTime() + 5 * 60 * 1000);
+  const fewMinutesToDate = new Date(new Date().getTime() + 5.5 * 60 * 1000);
 
   const anHourToString = 'in an hour';
-  const anHourToDate = new Date(new Date().getTime() + 60 * 60 * 1000);
+  const anHourToDate = new Date(new Date().getTime() + 65 * 60 * 1000);
 
   const fewHoursToString = 'in 5 hours';
-  const fewHoursToDate = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
+  const fewHoursToDate = new Date(new Date().getTime() + 5.5 * 60 * 60 * 1000);
 
   const tomorrowString = 'tomorrow';
-  const tomorrowDate = new Date(new Date().setDate(new Date().getDate() + 1));
+  const tomorrowDate = new Date(new Date().getTime() + 26 * 60 * 60 * 1000);
 
   const fewDaysToString = 'in 3 days';
-  const fewDaysToDate = new Date(new Date().setDate(new Date().getDate() + 3));
+  const fewDaysToDate = new Date(new Date().getTime() + 3.5 * 24 * 60 * 60 * 1000);
 
   const nextWeekString = 'next week';
-  const nextWeekDate = new Date(new Date().setDate(new Date().getDate() + 7));
+  const nextWeekDate = new Date(new Date().setDate(new Date().getDate() + 12));
 
   const fewWeeksToString = 'in 2 weeks';
-  const fewWeeksToDate = new Date(new Date().setDate(new Date().getDate() + 14));
+  const fewWeeksToDate = new Date(new Date().setDate(new Date().getDate() + 15));
 
   const nextMonthString = 'next month';
   const nextMonthDate = new Date(new Date().setDate(new Date().getDate() + 30));
@@ -43,7 +43,7 @@ describe('TimeToPipe', () => {
   const nextYearDate = new Date(new Date().setDate(new Date().getDate() + 366));
 
   const fewYearsToString = 'in 5 years';
-  const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 366 * 5));
+  const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 365 * 5));
 
   const invalidDateMessage = 'Invalid date';
   const invalidDateStr = '2022-02-21T019Z';
