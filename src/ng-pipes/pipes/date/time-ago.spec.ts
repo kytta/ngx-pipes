@@ -44,9 +44,11 @@ describe('TimeAgoPipe', () => {
 
   const fewYearsAgoString = 5 + ' years ago';
   const fewYearsAgoDate = new Date(new Date().setDate(new Date().getDate() - 365 * 5));
-  
-  const invalidDateMessage = "Invalid date";
-  const invalidDateStr = "2022-02-21T019Z";
+
+  const invalidDateMessage = 'Invalid date';
+  const invalidDateStr = '2022-02-21T019Z';
+  const lastWeekDateString = new Date(new Date().setDate(new Date().getDate() - 10)).toISOString();
+  const futureDateString = new Date(today.getTime() + 1000 * 20).toISOString();
 
   beforeAll(() => {
     pipe = new TimeAgoPipe();
@@ -119,8 +121,15 @@ describe('TimeAgoPipe', () => {
   it('should support moment.js last week', () => {
     expect(pipe.transform(moment().subtract(10, 'days'))).toEqual('last week');
   });
-  
-  
+
+  it('should return last week when parsing a string', () => {
+    expect(pipe.transform(lastWeekDateString)).toEqual('last week');
+  });
+
+  it('should return in the future when parsing a string', () => {
+    expect(pipe.transform(futureDateString)).toEqual(futureString);
+  });
+
   it('should throw invalid date for incorrect date string', () => {
     expect(pipe.transform(invalidDateStr)).toEqual(invalidDateMessage);
   });
