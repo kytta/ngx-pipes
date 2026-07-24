@@ -1,16 +1,21 @@
 <p align="center">
-<img 
-    src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
-<br/><br/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/ngx-logo-dark@2x.png">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/ngx-logo@2x.png">
+  <img width="360" height="120" alt="ngx-pipes" src="./assets/ngx-logo.svg">
+</picture>
+</p>
+<p align="center">
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/v/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
-<a href="https://github.com/kytta/ngx-pipes/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/check-runs/kytta/ngx-pipes/master?style=flat-square" alt="GitHub Actions"></a>
-<a href="https://coveralls.io/github/kytta/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/kytta/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
+<a href="https://npmx.dev/package/@kytta/ngx-pipes"><img src="https://img.shields.io/badge/.%2Fnpmx-000?style=flat-square" alt="npmx"></a>
+<a href="https://github.com/kytta/ngx-pipes/actions?query=branch%3Amaster"><img src="https://img.shields.io/github/check-runs/kytta/ngx-pipes/master?style=flat-square" alt="CI"></a>
+<a href="https://coveralls.io/github/kytta/ngx-pipes"><img src="https://img.shields.io/coveralls/kytta/ngx-pipes.svg?style=flat-square" alt="Coverage"></a>
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/dm/%40kytta%2Fngx-pipes.svg?style=flat-square" alt="npm"></a>
 <a href="https://www.npmjs.com/package/@kytta/ngx-pipes"><img src="https://img.shields.io/npm/dt/%40kytta%2Fngx-pipes?style=flat-square" alt="npm"></a>
 <a href="https://github.com/kytta/ngx-pipes/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT licensed"></a>
-<br/><br/>
+</p>
+<p align="center">
  Useful pipes for Angular with no external dependencies
-<br/><br/>
 </p>
 
 > [!NOTE]
