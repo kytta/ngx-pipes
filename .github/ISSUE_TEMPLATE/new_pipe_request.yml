@@ -1,0 +1,53 @@
+name: New pipe request
+description: Suggest a new pipe to add to ngx-pipes.
+title: "pipe: "
+labels:
+  - new pipe idea
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea!
+        Please [search existing issues](https://github.com/kytta/ngx-pipes/issues?q=is%3Aissue%20label%3A%22new%20pipe%20idea%22) before opening a new request.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Why do you need a new pipe?
+      placeholder: I struggle with ... and need a pipe that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_pipe
+    attributes:
+      label: Proposed pipe
+      description: What should the pipe do?
+      placeholder: |
+        The pipe should be called ... and it should ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage_example
+    attributes:
+      label: Usage example
+      description: How would someone use the pipe in an Angular template?
+      placeholder: |
+        {{ value | yourPipe: arg }}
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing pipes/workarounds you tried and why they are not enough.
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Related issues, or other links.

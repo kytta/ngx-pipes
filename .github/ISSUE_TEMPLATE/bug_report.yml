@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem with an existing pipe.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue.
+        Please [search existing issues](https://github.com/kytta/ngx-pipes/issues?q=is%3Aissue%20label%3Abug) before creating a new one.
+
+  - type: input
+    id: ngx_pipes_version
+    attributes:
+      label: '@kytta/ngx-pipes version'
+      placeholder: 4.x.x
+    validations:
+      required: true
+
+  - type: input
+    id: angular_version
+    attributes:
+      label: Angular version
+      placeholder: 22.x.x
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, Node.js, etc.
+      placeholder: |
+        Windows version ...
+        Chrome version ...
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current behavior
+      description: "Describe the bug: What's happening?"
+      placeholder: When I use ..., ... happens
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Code or steps to reproduce the problem. If possible, add a demo link (e.g. to StackBlitz)
+    validations:
+      required: true
