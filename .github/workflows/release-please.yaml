@@ -72,4 +72,4 @@ jobs:
           name: package
           path: dist/
 
-      - run: cd dist && npm publish ${{ github.ref_name == 'v3' && '--tag v3' || '' }}
+      - run: cd dist && npm publish ${{ github.ref_name == 'v3' && '--tag ng14' || '' }}
