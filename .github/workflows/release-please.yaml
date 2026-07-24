@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - master
+      - v3
 
 permissions: {}
 concurrency:
-  group: ${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref_name }}
   queue: max
 
 jobs:
@@ -23,6 +24,7 @@ jobs:
         id: release
         with:
           release-type: node
+          target-branch: ${{ github.ref_name }}
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
 
