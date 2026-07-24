@@ -268,7 +268,7 @@ Converts camelCase string to underscore.
 <p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
 ```
 
-### underscore
+### underscoreToSpace
 
 Converts underscore to space.
 
