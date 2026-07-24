@@ -130,6 +130,10 @@ describe('TimeAgoPipe', () => {
     expect(pipe.transform(futureDateString)).toEqual(futureString);
   });
 
+  it('should throw invalid date for falsey input', () => {
+    expect(pipe.transform(null)).toEqual(invalidDateMessage);
+  });
+
   it('should throw invalid date for incorrect date string', () => {
     expect(pipe.transform(invalidDateStr)).toEqual(invalidDateMessage);
   });
