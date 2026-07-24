@@ -1,4 +1,5 @@
 import { TimeToPipe } from './time-to';
+import * as moment from 'moment';
 
 describe('TimeToPipe', () => {
   let pipe: TimeToPipe;
@@ -43,6 +44,11 @@ describe('TimeToPipe', () => {
 
   const fewYearsToString = 'in 5 years';
   const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 366 * 5));
+
+  const invalidDateMessage = 'Invalid date';
+  const invalidDateStr = '2022-02-21T019Z';
+  const nextWeekDateString = new Date(new Date().setDate(new Date().getDate() + 10)).toISOString();
+  const pastDateString = new Date(today.getTime() - 1000 * 20).toISOString();
 
   beforeAll(() => {
     pipe = new TimeToPipe();
@@ -106,5 +112,29 @@ describe('TimeToPipe', () => {
 
   it('should return in 5 years', () => {
     expect(pipe.transform(fewYearsToDate)).toEqual(fewYearsToString);
+  });
+
+  it('should support moment.js just now', () => {
+    expect(pipe.transform(moment())).toEqual('just now');
+  });
+
+  it('should support moment.js last week', () => {
+    expect(pipe.transform(moment().add(10, 'days'))).toEqual('next week');
+  });
+
+  it('should return next week when parsing a string', () => {
+    expect(pipe.transform(nextWeekDateString)).toEqual('next week');
+  });
+
+  it('should return in the past when parsing a string', () => {
+    expect(pipe.transform(pastDateString)).toEqual(pastString);
+  });
+
+  it('should throw invalid date for falsey input', () => {
+    expect(pipe.transform(null)).toEqual(invalidDateMessage);
+  });
+
+  it('should throw invalid date for incorrect date string', () => {
+    expect(pipe.transform(invalidDateStr)).toEqual(invalidDateMessage);
   });
 });
