@@ -15,11 +15,20 @@ export class TimeToPipe implements PipeTransform {
   ];
 
   transform(inputDate: any): string {
-    if (!inputDate || (!inputDate.getTime && !inputDate.toDate)) {
+    if (!inputDate) {
       return 'Invalid date';
     }
 
-    const future = inputDate.toDate ? inputDate.toDate() : inputDate.getTime();
+    const future = inputDate.toDate
+      ? inputDate.toDate().getTime()
+      : inputDate.getTime
+      ? inputDate.getTime()
+      : Date.parse(inputDate);
+
+    if (isNaN(future)) {
+      return 'Invalid date';
+    }
+
     const now = +new Date();
 
     if (future < now) {
