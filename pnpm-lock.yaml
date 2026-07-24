@@ -4051,9 +4051,9 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  ua-parser-js@0.7.32:
-    resolution: {integrity: sha512-f9BESNVhzlhEFf2CHMSj40NWOjYPl1YKYbrvIr/hFTDEmLq7SRbWvm7FcdcpCYT95zrOhC7gZSxjdnnTpBcwVw==}
-    deprecated: You are using an outdated version of ua-parser-js. Please update to ua-parser-js v0.7.33 / v1.0.33 / v2.0.0 (or later) to avoid ReDoS vulnerability [CVE-2022-25927](https://github.com/advisories/GHSA-fhg7-m89q-25r3)
+  ua-parser-js@0.7.41:
+    resolution: {integrity: sha512-O3oYyCMPYgNNHuO7Jjk3uacJWZF8loBgwrfd/5LE/HyZ3lUIOdniQ7DNXJcIgZbwioZxk0fLfI4EVnetdiX5jg==}
+    hasBin: true
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -7554,7 +7554,7 @@ snapshots:
       socket.io: 4.5.4
       source-map: 0.6.1
       tmp: 0.2.1
-      ua-parser-js: 0.7.32
+      ua-parser-js: 0.7.41
       yargs: 16.2.0
     transitivePeerDependencies:
       - bufferutil
@@ -8812,7 +8812,7 @@ snapshots:
 
   typescript@4.9.5: {}
 
-  ua-parser-js@0.7.32: {}
+  ua-parser-js@0.7.41: {}
 
   undici-types@5.26.5: {}
 
