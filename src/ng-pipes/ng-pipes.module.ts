@@ -6,6 +6,7 @@ import { NgMathPipesModule } from './pipes/math/index';
 import { NgBooleanPipesModule } from './pipes/boolean/index';
 import { NgDatePipesModule } from './pipes/date/index';
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
   exports: [
     NgArrayPipesModule,
