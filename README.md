@@ -16,105 +16,6 @@
 > [!NOTE]
 > This is a maintained fork of the awesome [ngx-pipes](https://github.com/danrevah/ngx-pipes) that aims to modernize the library and incorporate pending fixes.
 
-## Table of contents
-
- - [Installation](#installation)
- - [Contributing](#contributing)
- - [Changelog](CHANGELOG.md)
- - [Date](#date)   
-    - [timeAgo](#timeago)
-    - [timeTo](#timeto)
- - [String](#string)
-    - [aOrAn](#aoran)
-    - [repeat](#repeat)
-    - [scan](#scan)
-    - [shorten](#shorten)
-    - [stripTags](#striptags)
-    - [ucfirst](#ucfirst)
-    - [ucwords](#ucwords)
-    - [trim](#trim)
-    - [ltrim](#ltrim)
-    - [rtrim](#rtrim)
-    - [reverse](#reverse)
-    - [slugify](#slugify)
-    - [camelize](#camelize)
-    - [latinise](#latinise)
-    - [lines](#lines)
-    - [underscore](#underscore)
-    - [underscoreToSpace](#underscoreToSpace)
-    - [test](#test)
-    - [match](#match)
-    - [lpad](#lpad)
-    - [rpad](#rpad)
-    - [makePluralString](#makepluralstring)
-    - [wrap](#wrap)
- - [Array](#Array)   
-    - [diff](#diff)
-    - [flatten](#flatten)
-    - [initial](#initial)
-    - [intersection](#intersection)
-    - [range](#range)
-    - [reverse](#reverse)
-    - [tail](#tail)
-    - [truthify](#truthify)
-    - [union](#union)
-    - [unique](#unique)
-    - [without](#without)
-    - [pluck](#pluck)
-    - [shuffle](#shuffle)
-    - [every](#every)
-    - [some](#some)
-    - [sample](#sample)
-    - [groupBy](#groupby)
-    - [groupByImpure](#groupbyimpure)
-    - [filterBy](#filterby)
-    - [filterByImpure](#filterbyimpure)
-    - [orderBy](#orderby)
-    - [orderByImpure](#orderbyimpure)
-    - [chunk](#chunk)
-    - [fromPairs](#fromPairs)
- - [Object](#object)
-    - [keys](#keys)
-    - [values](#values)
-    - [pairs](#pairs)
-    - [pick](#pick)
-    - [omit](#omit)
-    - [invert](#invert)
-    - [invertBy](#invertby)
-    - [diffObj](#diffobj)
- - [Math](#math)   
-    - [min](#min)
-    - [max](#max)
-    - [sum](#sum)
-    - [average](#average)
-    - [percentage](#percentage)
-    - [ceil](#ceil)
-    - [floor](#floor)
-    - [round](#round)
-    - [sqrt](#sqrt)
-    - [pow](#pow)
-    - [degrees](#degrees)
-    - [radians](#radians)
-    - [bytes](#bytes)
- - [Boolean](#boolean)   
-    - [isNull](#isnull)
-    - [isDefined](#isdefined)
-    - [isUndefined](#isundefined)
-    - [isString](#isstring)
-    - [isFunction](#isfunction)
-    - [isNumber](#isnumber)
-    - [isArray](#isarray)
-    - [isObject](#isobject)
-    - [isGreaterThan](#isgreaterthan)
-    - [isGreaterEqualThan](#isgreaterequalthan)
-    - [isLessThan](#islessthan)
-    - [isLessEqualThan](#islessequalthan)
-    - [isEqualTo](#isequalto)
-    - [isNotEqualTo](#isnotequalto)
-    - [isIdenticalTo](#isidenticalto)
-    - [isNotIdenticalTo](#isnotidenticalto)
- 
-
 ## Installation
 
 1. Use your preferred package manager to install the package
@@ -367,7 +268,7 @@ Converts camelCase string to underscore.
 <p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
 ```
 
-### underscore
+### underscoreToSpace
 
 Converts underscore to space.
 
@@ -1272,27 +1173,3 @@ this.num = 1;
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
-
-## Contributing
-
-* Before adding any new feature or a fix make sure to open an issue first!
-
-Clone the project, and install dependencies.
-
-```bash
-$ git clone git@github.com:kytta/ngx-pipes.git
-$ pnpm install
-```
-
-Create a new branch
-
-```bash
-$ git checkout -b feat/someFeature
-```
-
-Add tests & make sure everything is running properly
-```bash
-$ pnpm test
-```
-
-Commit & push, and make a pull request!
