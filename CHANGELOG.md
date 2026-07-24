@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [3.4.0](https://github.com/kytta/ngx-pipes/compare/v3.3.0...v3.4.0) (2026-07-24)
+
+
+### Features
+
+* **timeAgo:** support date strings as input ([#27](https://github.com/kytta/ngx-pipes/issues/27)) ([2d25730](https://github.com/kytta/ngx-pipes/commit/2d25730b27e700e8f1a75b4cec6ef04eef88d4f0))
+* **timeTo:** add TimeToPipe ([#29](https://github.com/kytta/ngx-pipes/issues/29)) ([1c61d91](https://github.com/kytta/ngx-pipes/commit/1c61d914e487b6445dcc4c05f91f6ddc2d1da779))
+
 ## [3.3.0](https://github.com/kytta/ngx-pipes/compare/v3.2.6...v3.3.0) (2026-05-17)
 
 
