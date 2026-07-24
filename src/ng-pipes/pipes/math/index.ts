@@ -27,9 +27,9 @@ export const MATH_PIPES = [
   RadiansPipe,
 ];
 
+/** @deprecated Pipes are now standalone; Import them directly. */
 @NgModule({
-  declarations: MATH_PIPES,
-  imports: [],
+  imports: MATH_PIPES,
   exports: MATH_PIPES,
 })
 export class NgMathPipesModule {}

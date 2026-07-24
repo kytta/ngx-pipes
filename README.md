@@ -119,17 +119,14 @@
   $ npm install ngx-pipes --save 
   ```
 
-2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule`, `NgDatePipesModule` or `NgBooleanPipesModule`.
+2. Import any pipes you need to use in your components:
 
   ```typescript
-  import {NgPipesModule} from 'ngx-pipes';
-  
-  @NgModule({
-   // ...
-   imports: [
-     // ...
-     NgPipesModule
-   ]
+  import {ReversePipe} from 'ngx-pipes';
+
+  @Component({
+    imports: [ReversePipe],
+    // ...
   })
   ```
 
@@ -140,6 +137,7 @@
 
   @Component({
     // ..
+    imports: [ReversePipe],
     providers: [ReversePipe]
   })
   export class AppComponent {

@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isObject } from '../helpers/helpers';
 
-@Pipe({ name: 'omit' })
+@Pipe({
+  name: 'omit',
+  standalone: true,
+})
 export class OmitPipe implements PipeTransform {
   transform(obj: any, ...args: Array<string>): Object {
     if (Array.isArray(obj) || !isObject(obj)) {

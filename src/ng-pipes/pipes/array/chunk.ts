@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'chunk' })
+@Pipe({
+  name: 'chunk',
+  standalone: true,
+})
 export class ChunkPipe implements PipeTransform {
   transform(input: any, size: number = 1): any {
     if (isString(input)) {

@@ -1,7 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { extractDeepPropertyByMapKey, isObject } from '../helpers/helpers';
 
-@Pipe({ name: 'pluck', pure: false })
+@Pipe({
+  name: 'pluck',
+  pure: false,
+  standalone: true,
+})
 export class PluckPipe implements PipeTransform {
   transform<T, K extends keyof T>(input: T, map: keyof T): T[K];
   transform(input: any[], map: string): any[];

@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'latinise' })
+@Pipe({
+  name: 'latinise',
+  standalone: true,
+})
 export class LatinisePipe implements PipeTransform {
   // Source: http://semplicewebsites.com/removing-accents-javascript
   // tslint:disable-next-line whitespace max-line-length object-literal-key-quotes
