@@ -6,7 +6,7 @@ import { extractDeepPropertyByMapKey, isFunction } from '../helpers/helpers';
   standalone: true,
 })
 export class GroupByPipe implements PipeTransform {
-  transform(input: any, discriminator: any = [], delimiter: string = '|'): any {
+  transform(input: any, discriminator: any = [], delimiter = '|'): any {
     if (!Array.isArray(input)) {
       return input;
     }

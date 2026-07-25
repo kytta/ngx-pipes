@@ -6,7 +6,7 @@ import { isString } from '../helpers/helpers';
   standalone: true,
 })
 export class RightPadPipe implements PipeTransform {
-  transform(str: string, length: number = 1, padCharacter: string = ' '): string {
+  transform(str: string, length = 1, padCharacter = ' '): string {
     if (!isString(str) || str.length >= length) {
       return str;
     }

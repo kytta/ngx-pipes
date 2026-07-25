@@ -6,7 +6,7 @@ import { applyPrecision } from '../helpers/helpers';
   standalone: true,
 })
 export class RoundPipe implements PipeTransform {
-  transform(num: number, precision: number = 0): number {
+  transform(num: number, precision = 0): number {
     return applyPrecision(num, precision);
   }
 }

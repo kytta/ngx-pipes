@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class CeilPipe implements PipeTransform {
-  transform(num: number, precision: number = 0): number {
+  transform(num: number, precision = 0): number {
     if (precision <= 0) {
       return Math.ceil(num);
     }
