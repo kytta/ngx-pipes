@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [4.0.0](https://github.com/kytta/ngx-pipes/compare/v3.3.0...v4.0.0) (2026-07-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* make pipes standalone ([#21](https://github.com/kytta/ngx-pipes/issues/21))
+* This removes 'TrurthifyPipe' which was an alias for the TruthifyPipe. The alias existed for smooth migration from ngx-pipes to @kytta/ngx-pipes. This only applies to the TypeScript class/type; the pipe as used in templates remains unchanged.
+* **deps:** mark Moment.js as optional peer dependency
+* The package now requires Angular v15 or later
+
+### Features
+
+* make pipes standalone ([#21](https://github.com/kytta/ngx-pipes/issues/21)) ([01481e4](https://github.com/kytta/ngx-pipes/commit/01481e4251216bbc251bd03f4547f24d4267f07e))
+* **timeAgo:** support date strings as input ([#27](https://github.com/kytta/ngx-pipes/issues/27)) ([c5d99fa](https://github.com/kytta/ngx-pipes/commit/c5d99faabff5310e91706063afa54e39bd20814d))
+* **timeTo:** add TimeToPipe ([#29](https://github.com/kytta/ngx-pipes/issues/29)) ([0019dca](https://github.com/kytta/ngx-pipes/commit/0019dcaa98b6a09bf28c19e090dd9f87b6ee0933))
+* upgrade to Angular 15 ([#18](https://github.com/kytta/ngx-pipes/issues/18)) ([854c7b2](https://github.com/kytta/ngx-pipes/commit/854c7b22c1586665b705ad1e7be876aebaa5f66a))
+
+
+### Bug Fixes
+
+* **deps:** mark Moment.js as optional peer dependency ([f676e22](https://github.com/kytta/ngx-pipes/commit/f676e222cd94cbda9f9275accd0190937fb8382c))
+
+
+### Miscellaneous Chores
+
+* remove typo alias "TrurthifyPipe" ([#22](https://github.com/kytta/ngx-pipes/issues/22)) ([fbe47fa](https://github.com/kytta/ngx-pipes/commit/fbe47faf290259109f9e963c2405717f5b635df3))
+
 ## [3.4.0](https://github.com/kytta/ngx-pipes/compare/v3.3.0...v3.4.0) (2026-07-24)
 
 
