@@ -1,4 +1,4 @@
-import { Pipe } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { GroupByPipe } from './group-by';
 
 // tslint:disable use-pipe-transform-interface
@@ -7,4 +7,4 @@ import { GroupByPipe } from './group-by';
   pure: false,
   standalone: true,
 })
-export class GroupByImpurePipe extends GroupByPipe {}
+export class GroupByImpurePipe extends GroupByPipe implements PipeTransform {}
