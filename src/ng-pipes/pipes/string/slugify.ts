@@ -11,7 +11,7 @@ export class SlugifyPipe implements PipeTransform {
       ? str
           .toLowerCase()
           .trim()
-          .replace(/[^\w\-]+/g, ' ')
+          .replace(/[^\w-]+/g, ' ')
           .replace(/\s+/g, '-')
       : str;
   }
