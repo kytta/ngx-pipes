@@ -27,8 +27,8 @@ export class TimeAgoPipe implements PipeTransform {
     const past = inputDate.toDate
       ? inputDate.toDate().getTime()
       : inputDate.getTime
-      ? inputDate.getTime()
-      : Date.parse(inputDate);
+        ? inputDate.getTime()
+        : Date.parse(inputDate);
 
     if (isNaN(past)) {
       return 'Invalid date';
