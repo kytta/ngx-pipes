@@ -23,8 +23,8 @@ export class TimeToPipe implements PipeTransform {
     const future = inputDate.toDate
       ? inputDate.toDate().getTime()
       : inputDate.getTime
-      ? inputDate.getTime()
-      : Date.parse(inputDate);
+        ? inputDate.getTime()
+        : Date.parse(inputDate);
 
     if (isNaN(future)) {
       return 'Invalid date';
