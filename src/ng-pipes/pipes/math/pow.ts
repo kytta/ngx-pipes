@@ -8,7 +8,7 @@ export class PowerPipe implements PipeTransform {
   transform(num: number, power?: number): number;
   transform(num: any, power?: number): any;
 
-  transform(num: any, power: number = 2): number {
+  transform(num: any, power = 2): number {
     return !isNaN(num) ? num ** power : num;
   }
 }

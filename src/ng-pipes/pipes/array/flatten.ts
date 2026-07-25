@@ -8,12 +8,12 @@ export class FlattenPipe implements PipeTransform {
   transform<T>(input: T, shallow?: boolean): T;
   transform(input: any[], shallow?: boolean): any[];
 
-  transform(input: any, shallow: boolean = false): any {
+  transform(input: any, shallow = false): any {
     if (!Array.isArray(input)) {
       return input;
     }
 
-    return shallow ? [].concat.apply([], input) : this.flatten(input);
+    return shallow ? [].concat(...input) : this.flatten(input);
   }
 
   private flatten(array: any[]): any[] {

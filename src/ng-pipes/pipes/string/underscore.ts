@@ -9,7 +9,7 @@ export class UnderscorePipe implements PipeTransform {
   transform(input: string, chars?: string): string;
   transform(input: any, chars?: string): any;
 
-  transform(text: any, chars: string = '\\s'): string {
+  transform(text: any, chars = '\\s'): string {
     return isString(text)
       ? text
           .trim()

@@ -8,7 +8,7 @@ export class SamplePipe implements PipeTransform {
   transform(input: any[], len?: number): any[];
   transform<T>(input: T, len?: number): T;
 
-  transform(input: any, len: number = 1): any {
+  transform(input: any, len = 1): any {
     if (!Array.isArray(input)) {
       return input;
     }

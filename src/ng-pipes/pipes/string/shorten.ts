@@ -9,7 +9,7 @@ export class ShortenPipe implements PipeTransform {
   transform(input: string, length?: number, suffix?: string, wordBreak?: boolean): string;
   transform(input: any, length?: number, suffix?: string, wordBreak?: boolean): any;
 
-  transform(text: any, length: number = 0, suffix: string = '', wordBreak: boolean = true): string {
+  transform(text: any, length = 0, suffix = '', wordBreak = true): string {
     if (!isString(text)) {
       return text;
     }
@@ -19,8 +19,7 @@ export class ShortenPipe implements PipeTransform {
         return text.slice(0, length) + suffix;
       }
 
-      // tslint:disable-next-line:no-bitwise
-      if (!!~text.indexOf(' ', length)) {
+      if (text.indexOf(' ', length) !== -1) {
         return text.slice(0, text.indexOf(' ', length)) + suffix;
       }
     }

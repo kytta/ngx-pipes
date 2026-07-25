@@ -6,7 +6,7 @@ import { isString } from '../helpers/helpers';
   standalone: true,
 })
 export class RepeatPipe implements PipeTransform {
-  transform(str: string, n: number = 1, separator: string = ''): string {
+  transform(str: string, n = 1, separator = ''): string {
     if (n <= 0) {
       throw new RangeError();
     }

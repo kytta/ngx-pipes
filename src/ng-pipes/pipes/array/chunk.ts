@@ -6,7 +6,7 @@ import { isString } from '../helpers/helpers';
   standalone: true,
 })
 export class ChunkPipe implements PipeTransform {
-  transform(input: any, size: number = 1): any {
+  transform(input: any, size = 1): any {
     if (isString(input)) {
       return this.chunk(input.split(''), size);
     }

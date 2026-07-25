@@ -8,7 +8,7 @@ export class PercentagePipe implements PipeTransform {
   transform(num: number, total?: number, floor?: boolean): number;
   transform<T>(num: T, total?: number, floor?: boolean): T;
 
-  transform(num: any, total: number = 100, floor: boolean = false): any {
+  transform(num: any, total = 100, floor = false): any {
     if (isNaN(num)) {
       return num;
     }

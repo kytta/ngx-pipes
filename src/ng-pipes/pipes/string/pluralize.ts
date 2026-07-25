@@ -161,7 +161,7 @@ export class MakePluralStringPipe implements PipeTransform {
     zero: 'zeroes',
   };
 
-  transform(singularEntity: string, quantity: number = 0): string {
+  transform(singularEntity: string, quantity = 0): string {
     if (!singularEntity || singularEntity === '') {
       return '';
     }
