@@ -19,8 +19,7 @@ export class ShortenPipe implements PipeTransform {
         return text.slice(0, length) + suffix;
       }
 
-      // tslint:disable-next-line:no-bitwise
-      if (!!~text.indexOf(' ', length)) {
+      if (text.indexOf(' ', length) !== -1) {
         return text.slice(0, text.indexOf(' ', length)) + suffix;
       }
     }
