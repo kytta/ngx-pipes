@@ -2,139 +2,99 @@ import { TimeToPipe } from './time-to';
 import * as moment from 'moment';
 
 describe('TimeToPipe', () => {
-  let pipe: TimeToPipe;
-  const today = new Date();
-  const past = new Date(today.getTime() - 1000 * 20);
+  const pipe = new TimeToPipe();
+  const startingTime = '2026-07-15T12:00:00Z';
 
-  const recentlyString = 'just now';
-  const pastString = 'in the past';
+  beforeEach(() => {
+    jasmine.clock().install();
+    jasmine.clock().mockDate(new Date(startingTime));
+  });
 
-  const fewSecondsAgoDate = new Date(today.getTime() + 5 * 1000);
-  const aMinuteAgoDate = new Date(today.getTime() + 60 * 1000);
-
-  const fewMinutesToString = 'in 5 minutes';
-  const fewMinutesToDate = new Date(new Date().getTime() + 5.5 * 60 * 1000);
-
-  const anHourToString = 'in an hour';
-  const anHourToDate = new Date(new Date().getTime() + 65 * 60 * 1000);
-
-  const fewHoursToString = 'in 5 hours';
-  const fewHoursToDate = new Date(new Date().getTime() + 5.5 * 60 * 60 * 1000);
-
-  const tomorrowString = 'tomorrow';
-  const tomorrowDate = new Date(new Date().getTime() + 26 * 60 * 60 * 1000);
-
-  const fewDaysToString = 'in 3 days';
-  const fewDaysToDate = new Date(new Date().getTime() + 3.5 * 24 * 60 * 60 * 1000);
-
-  const nextWeekString = 'next week';
-  const nextWeekDate = new Date(new Date().setDate(new Date().getDate() + 12));
-
-  const fewWeeksToString = 'in 2 weeks';
-  const fewWeeksToDate = new Date(new Date().setDate(new Date().getDate() + 15));
-
-  const nextMonthString = 'next month';
-  const nextMonthDate = new Date(new Date().setDate(new Date().getDate() + 30));
-
-  const fewMonthsToString = 'in 5 months';
-  const fewMonthsToDate = new Date(new Date().setDate(new Date().getDate() + 30 * 5));
-
-  const nextYearString = 'next year';
-  const nextYearDate = new Date(new Date().setDate(new Date().getDate() + 366));
-
-  const fewYearsToString = 'in 5 years';
-  const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 365 * 5));
-
-  const invalidDateMessage = 'Invalid date';
-  const invalidDateStr = '2022-02-21T019Z';
-  const nextWeekDateString = new Date(new Date().setDate(new Date().getDate() + 10)).toISOString();
-  const pastDateString = new Date(today.getTime() - 1000 * 20).toISOString();
-
-  beforeAll(() => {
-    pipe = new TimeToPipe();
+  afterEach(() => {
+    jasmine.clock().uninstall();
   });
 
   it('should return just now', () => {
-    expect(pipe.transform(new Date())).toEqual(recentlyString);
+    expect(pipe.transform(new Date(startingTime))).toEqual('just now');
   });
 
-  it('should return just now', () => {
-    expect(pipe.transform(fewSecondsAgoDate)).toEqual(recentlyString);
+  it('should return just now for a few seconds ahead', () => {
+    expect(pipe.transform(new Date('2026-07-15T12:00:05Z'))).toEqual('just now');
   });
 
-  it('should return just now', () => {
-    expect(pipe.transform(aMinuteAgoDate)).toEqual(recentlyString);
+  it('should return just now for a minute ahead', () => {
+    expect(pipe.transform(new Date('2026-07-15T12:01:00Z'))).toEqual('just now');
   });
 
   it('should return in the past', () => {
-    expect(pipe.transform(past)).toEqual(pastString);
+    expect(pipe.transform(new Date('2026-07-15T11:59:40Z'))).toEqual('in the past');
   });
 
   it('should return in 5 minutes', () => {
-    expect(pipe.transform(fewMinutesToDate)).toEqual(fewMinutesToString);
+    expect(pipe.transform(new Date('2026-07-15T12:05:00Z'))).toEqual('in 5 minutes');
   });
 
   it('should return in an hour', () => {
-    expect(pipe.transform(anHourToDate)).toEqual(anHourToString);
+    expect(pipe.transform(new Date('2026-07-15T13:00:00Z'))).toEqual('in an hour');
   });
 
   it('should return in 5 hours', () => {
-    expect(pipe.transform(fewHoursToDate)).toEqual(fewHoursToString);
+    expect(pipe.transform(new Date('2026-07-15T17:00:00Z'))).toEqual('in 5 hours');
   });
 
   it('should return tomorrow', () => {
-    expect(pipe.transform(tomorrowDate)).toEqual(tomorrowString);
+    expect(pipe.transform(new Date('2026-07-16T12:00:00Z'))).toEqual('tomorrow');
   });
 
-  it('should return in 5 days', () => {
-    expect(pipe.transform(fewDaysToDate)).toEqual(fewDaysToString);
+  it('should return in 3 days', () => {
+    expect(pipe.transform(new Date('2026-07-18T12:00:00Z'))).toEqual('in 3 days');
   });
 
   it('should return next week', () => {
-    expect(pipe.transform(nextWeekDate)).toEqual(nextWeekString);
+    expect(pipe.transform(new Date('2026-07-25T12:00:00Z'))).toEqual('next week');
   });
 
   it('should return in 2 weeks', () => {
-    expect(pipe.transform(fewWeeksToDate)).toEqual(fewWeeksToString);
+    expect(pipe.transform(new Date('2026-07-30T12:00:00Z'))).toEqual('in 2 weeks');
   });
 
   it('should return next month', () => {
-    expect(pipe.transform(nextMonthDate)).toEqual(nextMonthString);
+    expect(pipe.transform(new Date('2026-08-14T12:00:00Z'))).toEqual('next month');
   });
 
   it('should return in 5 months', () => {
-    expect(pipe.transform(fewMonthsToDate)).toEqual(fewMonthsToString);
+    expect(pipe.transform(new Date('2026-12-12T12:00:00Z'))).toEqual('in 5 months');
   });
 
   it('should return next year', () => {
-    expect(pipe.transform(nextYearDate)).toEqual(nextYearString);
+    expect(pipe.transform(new Date('2027-07-15T12:00:00Z'))).toEqual('next year');
   });
 
   it('should return in 5 years', () => {
-    expect(pipe.transform(fewYearsToDate)).toEqual(fewYearsToString);
+    expect(pipe.transform(new Date('2031-07-15T12:00:00Z'))).toEqual('in 5 years');
   });
 
   it('should support moment.js just now', () => {
-    expect(pipe.transform(moment())).toEqual('just now');
+    expect(pipe.transform(moment(startingTime))).toEqual('just now');
   });
 
-  it('should support moment.js last week', () => {
-    expect(pipe.transform(moment().add(10, 'days'))).toEqual('next week');
+  it('should support moment.js next week', () => {
+    expect(pipe.transform(moment('2026-07-25T12:00:00Z'))).toEqual('next week');
   });
 
   it('should return next week when parsing a string', () => {
-    expect(pipe.transform(nextWeekDateString)).toEqual('next week');
+    expect(pipe.transform('2026-07-25T12:00:00.000Z')).toEqual('next week');
   });
 
   it('should return in the past when parsing a string', () => {
-    expect(pipe.transform(pastDateString)).toEqual(pastString);
+    expect(pipe.transform('2026-07-15T11:59:40.000Z')).toEqual('in the past');
   });
 
   it('should throw invalid date for falsey input', () => {
-    expect(pipe.transform(null)).toEqual(invalidDateMessage);
+    expect(pipe.transform(null)).toEqual('Invalid date');
   });
 
   it('should throw invalid date for incorrect date string', () => {
-    expect(pipe.transform(invalidDateStr)).toEqual(invalidDateMessage);
+    expect(pipe.transform('2022-02-21T019Z')).toEqual('Invalid date');
   });
 });
