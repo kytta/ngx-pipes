@@ -13,7 +13,7 @@ export class FlattenPipe implements PipeTransform {
       return input;
     }
 
-    return shallow ? [].concat.apply([], input) : this.flatten(input);
+    return shallow ? [].concat(...input) : this.flatten(input);
   }
 
   private flatten(array: any[]): any[] {
