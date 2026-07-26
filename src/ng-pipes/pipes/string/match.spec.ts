@@ -11,11 +11,11 @@ describe('MatchPipe', () => {
     expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
-  it('should camelize properly', () => {
+  it('should match properly', () => {
     expect(pipe.transform('foo 42', '[\\d]+$', 'g')).toEqual(['42']);
     expect(pipe.transform('42 foo', '[\\d]+$', 'g')).toEqual(null);
     expect(pipe.transform('foo', '[\\d]+$', 'g')).toEqual(null);
     expect(pipe.transform('FOO', '^foo')).toEqual(null);
-    expect(pipe.transform('FOO', '^foo', 'i')).toBeTruthy(['FOO']);
+    expect(pipe.transform('FOO', '^foo', 'gi')).toEqual(['FOO']);
   });
 });
