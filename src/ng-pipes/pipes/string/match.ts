@@ -6,10 +6,10 @@ import { isString } from '../helpers/helpers';
   standalone: true,
 })
 export class MatchPipe implements PipeTransform {
-  transform(text: string, pattern: string, flags?: string): RegExpMatchArray | null;
-  transform<T>(text: T, pattern: string, flags?: string): T;
+  transform(text: string, pattern: string | RegExp, flags?: string): RegExpMatchArray | null;
+  transform<T>(text: T, pattern: string | RegExp, flags?: string): T;
 
-  transform(text: any, pattern: string, flags?: string): any {
+  transform(text: any, pattern: string | RegExp, flags?: string): any {
     if (!isString(text)) {
       return text;
     }

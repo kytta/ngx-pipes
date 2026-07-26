@@ -304,7 +304,7 @@ Returns array of matched elements in string.
 
 ```html
 <p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
-<p>{{'42 foo' | match: '[\\d]+$': 'g' }}</p> <!-- Output: null -->
+<p>{{'42 foo' | match: /[\d]+$/g }}</p> <!-- Output: null -->
 <p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
 ```
 
