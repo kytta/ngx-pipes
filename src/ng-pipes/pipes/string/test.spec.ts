@@ -1,24 +1,29 @@
 import { TestPipe } from './test';
 
 describe('TestPipe', () => {
-  let pipe: TestPipe;
-
-  beforeEach(() => {
-    pipe = new TestPipe();
-  });
+  const pipe = new TestPipe();
 
   it('should not do anything if not a string', () => {
     expect(pipe.transform(null, '')).toEqual(null);
     expect(pipe.transform(undefined, '')).toEqual(undefined);
     expect(pipe.transform(42, '')).toEqual(42);
+    expect(pipe.transform([42, 67], '')).toEqual([42, 67]);
     expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
-  it('should camelize properly', () => {
+  it('should test on regex strings', () => {
     expect(pipe.transform('foo 42', '[\\d]+$', 'g')).toBeTruthy();
     expect(pipe.transform('42 foo', '[\\d]+$', 'g')).toBeFalsy();
     expect(pipe.transform('foo', '[\\d]+$', 'g')).toBeFalsy();
     expect(pipe.transform('FOO', '^foo')).toBeFalsy();
     expect(pipe.transform('FOO', '^foo', 'i')).toBeTruthy();
+  });
+
+  it('should test on RegExp', () => {
+    expect(pipe.transform('foo 42', /[\d]+$/g)).toBeTruthy();
+    expect(pipe.transform('42 foo', /[\d]+$/g)).toBeFalsy();
+    expect(pipe.transform('foo', /[\d]+$/g)).toBeFalsy();
+    expect(pipe.transform('FOO', /^foo/)).toBeFalsy();
+    expect(pipe.transform('FOO', /^foo/i)).toBeTruthy();
   });
 });
