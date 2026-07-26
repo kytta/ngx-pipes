@@ -3,7 +3,7 @@
 ## Development setup
 
 **Prerequisites:**
-- Node.js v18
+- Node.js v26
 - pnpm v10
 
 ```shell
