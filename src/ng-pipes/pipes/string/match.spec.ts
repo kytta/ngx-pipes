@@ -11,11 +11,19 @@ describe('MatchPipe', () => {
     expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
-  it('should match properly', () => {
+  it('should match on regex strings', () => {
     expect(pipe.transform('foo 42', '[\\d]+$', 'g')).toEqual(['42']);
     expect(pipe.transform('42 foo', '[\\d]+$', 'g')).toEqual(null);
     expect(pipe.transform('foo', '[\\d]+$', 'g')).toEqual(null);
     expect(pipe.transform('FOO', '^foo')).toEqual(null);
     expect(pipe.transform('FOO', '^foo', 'gi')).toEqual(['FOO']);
+  });
+
+  it('should match on RegExp', () => {
+    expect(pipe.transform('foo 42', /[\d]+$/g)).toEqual(['42']);
+    expect(pipe.transform('42 foo', /[\d]+$/g)).toEqual(null);
+    expect(pipe.transform('foo', /[\d]+$/g)).toEqual(null);
+    expect(pipe.transform('FOO', /^foo/)).toEqual(null);
+    expect(pipe.transform('FOO', /^foo/gi)).toEqual(['FOO']);
   });
 });
