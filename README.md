@@ -292,7 +292,7 @@ Tests if a string matches a pattern.
 
 ```html
 <p>{{'foo 42' | test: '[\\d]+$': 'g' }}</p> <!-- Output: true -->
-<p>{{'42 foo' | test: '[\\d]+$': 'g' }}</p> <!-- Output: false -->
+<p>{{'42 foo' | test: /[\d]+$/g }}</p> <!-- Output: false -->
 <p>{{'FOO' | test: '^foo': 'i' }}</p> <!-- Output: true -->
 ```
 

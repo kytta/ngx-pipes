@@ -11,11 +11,19 @@ describe('TestPipe', () => {
     expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
-  it('should test on strings', () => {
+  it('should test on regex strings', () => {
     expect(pipe.transform('foo 42', '[\\d]+$', 'g')).toBeTruthy();
     expect(pipe.transform('42 foo', '[\\d]+$', 'g')).toBeFalsy();
     expect(pipe.transform('foo', '[\\d]+$', 'g')).toBeFalsy();
     expect(pipe.transform('FOO', '^foo')).toBeFalsy();
     expect(pipe.transform('FOO', '^foo', 'i')).toBeTruthy();
+  });
+
+  it('should test on RegExp', () => {
+    expect(pipe.transform('foo 42', /[\d]+$/g)).toBeTruthy();
+    expect(pipe.transform('42 foo', /[\d]+$/g)).toBeFalsy();
+    expect(pipe.transform('foo', /[\d]+$/g)).toBeFalsy();
+    expect(pipe.transform('FOO', /^foo/)).toBeFalsy();
+    expect(pipe.transform('FOO', /^foo/i)).toBeTruthy();
   });
 });
