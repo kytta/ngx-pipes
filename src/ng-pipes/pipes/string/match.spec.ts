@@ -1,11 +1,7 @@
 import { MatchPipe } from './match';
 
 describe('MatchPipe', () => {
-  let pipe: MatchPipe;
-
-  beforeEach(() => {
-    pipe = new MatchPipe();
-  });
+  const pipe = new MatchPipe();
 
   it('should not do anything if not a string', () => {
     expect(pipe.transform(null, '')).toEqual(null);
