@@ -7,6 +7,7 @@ describe('MatchPipe', () => {
     expect(pipe.transform(null, '')).toEqual(null);
     expect(pipe.transform(undefined, '')).toEqual(undefined);
     expect(pipe.transform(42, '')).toEqual(42);
+    expect(pipe.transform([42, 67], '')).toEqual([42, 67]);
     expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
