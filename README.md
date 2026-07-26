@@ -290,9 +290,13 @@ Tests if a string matches a pattern.
 
 **Usage:** `string | test: {RegExp}: {Flags}`
 
+```ts
+protected myRegex = /[\d]+$/g
+```
+
 ```html
 <p>{{'foo 42' | test: '[\\d]+$': 'g' }}</p> <!-- Output: true -->
-<p>{{'42 foo' | test: /[\d]+$/g }}</p> <!-- Output: false -->
+<p>{{'42 foo' | test: myRegex }}</p> <!-- Output: false -->
 <p>{{'FOO' | test: '^foo': 'i' }}</p> <!-- Output: true -->
 ```
 
@@ -302,9 +306,13 @@ Returns array of matched elements in string.
 
 **Usage:** `string | match: {RegExp}: {Flags}`
 
+```ts
+protected myRegex = /[\d]+$/g
+```
+
 ```html
 <p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
-<p>{{'42 foo' | match: /[\d]+$/g }}</p> <!-- Output: null -->
+<p>{{'42 foo' | match: myRegex }}</p> <!-- Output: null -->
 <p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
 ```
 
