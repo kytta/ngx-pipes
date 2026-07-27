@@ -26,7 +26,7 @@ export class GroupByPipe implements PipeTransform {
 
   private extractKeyByDiscriminator(discriminator: any, payload: any, delimiter: string) {
     if (isFunction(discriminator)) {
-      return (<Function>discriminator)(payload);
+      return discriminator(payload);
     }
 
     if (Array.isArray(discriminator)) {
