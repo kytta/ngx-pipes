@@ -15,8 +15,12 @@ describe('LeftTrimPipe', () => {
     expect(pipe.transform('foo bar  ')).toEqual('foo bar  ');
   });
 
-  it('should not modify empty strings', () => {
+  it('should not modify falsy strings', () => {
     expect(pipe.transform('')).toEqual('');
+    // @ts-ignore
+    expect(pipe.transform(undefined)).toEqual(undefined);
+    // @ts-ignore
+    expect(pipe.transform(null)).toEqual(null);
   });
 
   it('should not modify input on empty trimchars', () => {
