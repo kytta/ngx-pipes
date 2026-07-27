@@ -31,6 +31,10 @@ describe('OrderByPipe', () => {
       expect(pipe.transform([3, 2, 1])).toEqual([1, 2, 3]);
     });
 
+    it('should order ascending', () => {
+      expect(pipe.transform([3, 2, 1], '+')).toEqual([1, 2, 3]);
+    });
+
     it('should order descending', () => {
       expect(pipe.transform([1, 2, 3], '-')).toEqual([3, 2, 1]);
     });
@@ -57,6 +61,15 @@ describe('OrderByPipe', () => {
         { id: 4, name: 'Dave', amount: 2 },
         { id: 2, name: 'Michael', amount: 42 },
         { id: 1, name: 'John', amount: 1337 },
+      ]);
+    });
+
+    it('should order ascending', () => {
+      expect(pipe.transform(testArray, '+name')).toEqual([
+        { id: 3, name: 'Dan', amount: 1 },
+        { id: 4, name: 'Dave', amount: 2 },
+        { id: 1, name: 'John', amount: 1337 },
+        { id: 2, name: 'Michael', amount: 42 },
       ]);
     });
 
