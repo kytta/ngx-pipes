@@ -1,33 +1,33 @@
-export function isUndefined(value: any) {
-  return typeof value === 'undefined';
+export function isUndefined(value: unknown): value is undefined {
+  return value === undefined;
 }
 
-export function isNull(value: any) {
+export function isNull(value: unknown): value is null {
   return value === null;
 }
 
-export function isFunction(value: any) {
+export function isFunction(value: unknown): value is (...args: unknown[]) => unknown {
   return typeof value === 'function';
 }
 
-export function isNumber(value: any) {
+export function isNumber(value: unknown): value is number {
   return typeof value === 'number';
 }
 
-export function isString(value: any) {
+export function isString(value: unknown): value is string {
   return typeof value === 'string';
 }
 
-export function isBoolean(value: any) {
+export function isBoolean(value: unknown): value is boolean {
   return typeof value === 'boolean';
 }
 
-export function isObject(value: any) {
+export function isObject(value: any): boolean {
   return value !== null && typeof value === 'object';
 }
 
-export function isNumberFinite(value: any) {
-  return isNumber(value) && isFinite(value);
+export function isNumberFinite(value: unknown): value is number {
+  return isNumber(value) && Number.isFinite(value);
 }
 
 export function isVowel(letter: string): boolean {
@@ -36,13 +36,13 @@ export function isVowel(letter: string): boolean {
   return vowels.indexOf(letter) !== -1;
 }
 
-export function ucFirst(text: string) {
+export function ucFirst(text: string): string {
   const [part, ...split] = text.split(/\s/g);
 
   const ucd = part
     .toLowerCase()
     .split(/(?=['|-])/g)
-    .map((word: any) =>
+    .map((word) =>
       word.indexOf('-') + word.indexOf("'") > -2
         ? word.slice(0, 2).toUpperCase() + word.slice(2)
         : word.slice(0, 1).toUpperCase() + word.slice(1)
@@ -52,7 +52,7 @@ export function ucFirst(text: string) {
   return [ucd, ...split].join(' ');
 }
 
-export function applyPrecision(num: number, precision: number) {
+export function applyPrecision(num: number, precision: number): number {
   if (precision <= 0) {
     return Math.round(num);
   }
@@ -62,19 +62,19 @@ export function applyPrecision(num: number, precision: number) {
   return Math.round(num * tho) / tho;
 }
 
-export function extractDeepPropertyByMapKey(obj: any, map: string): any {
+export function extractDeepPropertyByMapKey(obj: Record<string, unknown>, map: string): any {
   const keys = map.split('.');
   const head = keys.shift();
 
   return keys.reduce(
-    (prop: any, key: string) => {
+    (prop: Record<string, unknown>, key: string) => {
       return !isUndefined(prop) && !isNull(prop) && !isUndefined(prop[key]) ? prop[key] : undefined;
     },
     obj[head || '']
   );
 }
 
-export function extractDeepPropertyByParentMapKey(obj: any, map: string): any {
+export function extractDeepPropertyByParentMapKey(obj: Record<string, unknown>, map: string): any {
   const keys = map.split('.');
   const tail = keys.pop();
   const props = extractDeepPropertyByMapKey(obj, keys.join('.'));
@@ -82,7 +82,7 @@ export function extractDeepPropertyByParentMapKey(obj: any, map: string): any {
   return { props, tail };
 }
 
-export function getKeysTwoObjects(obj: any, other: any): any {
+export function getKeysTwoObjects(obj: object, other: object): string[] {
   return [...Object.keys(obj), ...Object.keys(other)].filter((key, index, array) => array.indexOf(key) === index);
 }
 
