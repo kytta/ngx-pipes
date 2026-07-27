@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [3.4.1](https://github.com/kytta/ngx-pipes/compare/v3.4.0...v3.4.1) (2026-07-27)
+
+
+### Bug Fixes
+
+* **lpad:** disallow empty strings as padding characters ([#53](https://github.com/kytta/ngx-pipes/issues/53)) ([f263336](https://github.com/kytta/ngx-pipes/commit/f2633365373cb05968aab8f06a662e2ecb0b7c4c))
+* **rpad:** disallow empty strings as padding characters ([#53](https://github.com/kytta/ngx-pipes/issues/53)) ([f263336](https://github.com/kytta/ngx-pipes/commit/f2633365373cb05968aab8f06a662e2ecb0b7c4c))
+
 ## [3.4.0](https://github.com/kytta/ngx-pipes/compare/v3.3.0...v3.4.0) (2026-07-24)
 
 
