@@ -40,17 +40,17 @@ export class OrderByPipe implements PipeTransform {
         // tslint:disable-next-line:switch-default
         switch (sign) {
           case '+':
-            return out.sort(OrderByPipe.simpleSort.bind(this));
+            return out.sort(OrderByPipe.simpleSort);
           case '-':
-            return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
+            return out.sort(OrderByPipe.simpleSort).reverse();
         }
       }
 
-      return out.sort(OrderByPipe.orderCompare.bind(this, prop, asc));
+      return out.sort((a, b) => OrderByPipe.orderCompare(prop, asc, a, b));
     }
 
     // default sort by value
-    return out.sort(OrderByPipe.simpleSort.bind(this));
+    return out.sort(OrderByPipe.simpleSort);
   }
 
   private static simpleSort(a: any, b: any) {
