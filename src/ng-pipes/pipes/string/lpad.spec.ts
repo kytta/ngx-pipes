@@ -1,29 +1,30 @@
 import { LeftPadPipe } from './lpad';
 
 describe('LeftPadPipe', () => {
-  let pipe: LeftPadPipe;
+  const pipe = new LeftPadPipe();
 
-  beforeEach(() => {
-    pipe = new LeftPadPipe();
+  it('should left pad with spaces by default', () => {
+    expect(pipe.transform('foo', 5)).toEqual('  foo');
   });
 
-  it('should left pad with 2 blanks', () => {
-    const result = pipe.transform('foo', 5);
-    expect(result).toEqual('  foo');
+  it('should left pad empty strings', () => {
+    expect(pipe.transform('', 5)).toEqual('     ');
   });
 
-  it('should left pad a number casted to string with 5 zeros', () => {
-    const result = pipe.transform(String(2), 6, '0');
-    expect(result).toEqual('000002');
+  it('should left pad using a non-space padding character', () => {
+    expect(pipe.transform('2', 6, '0')).toEqual('000002');
   });
 
-  it('should not add padding', () => {
-    const result = pipe.transform('foo', 3);
-    expect(result).toEqual('foo');
+  it('should not modify strings longer than desired length', () => {
+    expect(pipe.transform('foo', 3)).toEqual('foo');
+    expect(pipe.transform('foo', 1)).toEqual('foo');
   });
 
-  it('should not add padding', () => {
-    const result = pipe.transform('foofoo', 3);
-    expect(result).toEqual('foofoo');
+  it('should not modify strings on negative length', () => {
+    expect(pipe.transform('foo', -1)).toEqual('foo');
+  });
+
+  it('should not modify strings on empty pad character', () => {
+    expect(pipe.transform('foo', 6, '')).toEqual('foo');
   });
 });

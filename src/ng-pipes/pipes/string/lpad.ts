@@ -7,7 +7,7 @@ import { isString } from '../helpers/helpers';
 })
 export class LeftPadPipe implements PipeTransform {
   transform(str: string, length: number, padCharacter = ' '): string {
-    if (!isString(str) || str.length >= length) {
+    if (!isString(str) || str.length >= length || padCharacter === '') {
       return str;
     }
     while (str.length < length) {
