@@ -1,19 +1,32 @@
 import { RightTrimPipe } from './rtrim';
 
 describe('RightTrimPipe', () => {
-  let pipe: RightTrimPipe;
-
-  beforeEach(() => {
-    pipe = new RightTrimPipe();
-  });
+  const pipe = new RightTrimPipe();
 
   it('should right trim whitespace from string', () => {
-    const result = pipe.transform('   foo bar   ');
-    expect(result).toEqual('   foo bar');
+    expect(pipe.transform('   foo bar   ')).toEqual('   foo bar');
   });
 
   it('should right trim other characters from string', () => {
-    const result = pipe.transform('42foo bar42', '42');
-    expect(result).toEqual('42foo bar');
+    expect(pipe.transform('42foo bar42', '42')).toEqual('42foo bar');
+  });
+
+  it('should not modify already trimmed string', () => {
+    expect(pipe.transform('  foo bar')).toEqual('  foo bar');
+  });
+
+  it('should not modify empty strings', () => {
+    expect(pipe.transform('')).toEqual('');
+  });
+
+  it('should not modify input on empty trimchars', () => {
+    expect(pipe.transform(' foo ', '')).toEqual(' foo ');
+  });
+
+  it('should not mutate string', () => {
+    const original = '   foo bar   ';
+
+    expect(pipe.transform(original)).not.toBe(original);
+    expect(original).toBe('   foo bar   ');
   });
 });
