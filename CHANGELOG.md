@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 Version history: [npm](https://www.npmjs.com/package/@kytta/ngx-pipes?activeTab=versions) | [npmx](https://npmx.dev/package/@kytta/ngx-pipes/versions)
 
+## [4.1.0](https://github.com/kytta/ngx-pipes/compare/v4.0.0...v4.1.0) (2026-07-27)
+
+
+### Features
+
+* **match:** support using RegExp objects in MatchPipe ([#39](https://github.com/kytta/ngx-pipes/issues/39)) ([54e04a5](https://github.com/kytta/ngx-pipes/commit/54e04a53387bcca28b9c43875a46400bcadcdaa2))
+* **test:** support using RegExp objects in TestPipe ([#41](https://github.com/kytta/ngx-pipes/issues/41)) ([220b77f](https://github.com/kytta/ngx-pipes/commit/220b77ff4ceea0c263f6132b9b54546de731a619))
+
+
+### Bug Fixes
+
+* **lpad:** disallow empty strings as padding characters ([#52](https://github.com/kytta/ngx-pipes/issues/52)) ([761047b](https://github.com/kytta/ngx-pipes/commit/761047bc0c9cad2ce57945214d8ac9414885f7f3))
+* **rpad:** disallow empty strings as padding characters ([#52](https://github.com/kytta/ngx-pipes/issues/52)) ([761047b](https://github.com/kytta/ngx-pipes/commit/761047bc0c9cad2ce57945214d8ac9414885f7f3))
+
 ## [4.0.0](https://github.com/kytta/ngx-pipes/compare/v3.3.0...v4.0.0) (2026-07-25)
 
 
